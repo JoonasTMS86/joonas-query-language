@@ -21,13 +21,13 @@ All the byte, word and doubleword numeric values in the .JDB file are Little End
 
 WORD = 16-bit value
 
-*         4 BYTES: Size of this table in bytes, including these first 4 bytes.
-*         4 BYTES: Current value of the INT_AUTOINCREMENT data type. This is always set to 1 when a new table is created.
-*         N BYTES: Null-terminated string. The name of this table.
-*         4 BYTES: Number of rows in this table.
-*            BYTE: Number of columns in this table.
-*         N WORDS: N column data type definitions. N is determined by the previous value "number of columns". The first byte indicates constraint: can be null (0) or cannot be null (1), the second byte indicates the data type of the column.
-*       N STRINGS: N null-terminated strings for column names. N is determined by the value in "number of columns".
+* 4 BYTES:         Size of this table in bytes, including these first 4 bytes.
+* 4 BYTES:         Current value of the INT_AUTOINCREMENT data type. This is always set to 1 when a new table is created.
+* N BYTES:         Null-terminated string. The name of this table.
+* 4 BYTES:         Number of rows in this table.
+* BYTE:            Number of columns in this table.
+* N WORDS:         N column data type definitions. N is determined by the previous value "number of columns". The first byte indicates constraint: can be null (0) or cannot be null (1), the second byte indicates the data type of the column.
+* N STRINGS:       N null-terminated strings for column names. N is determined by the value in "number of columns".
 * N 4-BYTE VALUES: Index of each row (row offset from the very start of the table). N is determined by the value in "number of columns".
 * Then comes the data, if the number of rows is greater than zero. If a field starts with a byte of value 0, it means that field is NULL and therefore the next byte belongs to the next field on the table.
 
