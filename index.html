@@ -1,0 +1,75 @@
+<!doctype html>
+<meta charset="utf-8">
+
+<head>
+
+<title>JQL - Joonas Query Language</title>
+
+<style>
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #33dddd;
+}
+
+tr:nth-child(even) {
+  background-color: #008888;
+}
+
+.attention {
+background-color: #444400;
+color: #ffff44;
+border-style: solid;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Joonas Query Language - JQL</h1>
+<p class="attention">
+V 0.9
+<br/>
+NOTE: This app is an early Work-In-Progress!
+<br/>
+In the current version, tables can be created, rows can be added to them and the contents of the tables can be viewed.
+<br/>
+Many of the features of JQL are still yet to be implemented but some of the functionality is already in place,
+<br/>
+mainly: creation of tables and adding data to tables.
+<br/>
+<br/>
+To delete all the tables for the current session (removal of tables is not saved but if you make changes after removing the tables, those changes are saved), execute the query:
+<br/>
+DELETEALL
+</p>
+
+Please enter your query below. Click "Execute" to execute it.
+<br/>
+<br/>
+For the documentation of my JQL language, please <a href="jqldocumentation.html" target="_blank">read this page.</a>
+<br/>
+<br/>
+
+<textarea id="query" rows="6" cols="70"></textarea>
+<br/>
+<button onclick="executeQuery()">Execute</button> 
+
+<script src="jql.js"></script>
+
+<p id="response" style='font-family: "Lucida Console", "Courier New", monospace;'></p>
+
+</body>
+</html>
